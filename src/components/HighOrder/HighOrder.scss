@@ -1,0 +1,27 @@
+main {
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1000px;
+        flex-wrap: wrap;
+        gap: 50px;
+        position: absolute;
+        left: 270px;
+        top: 150px;
+      
+        .card-details {
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            width: 250px;
+    
+            .card-header{
+                font-size: 30px;
+            }
+        }
+    
+    }
+}
+
+
