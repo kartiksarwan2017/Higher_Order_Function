@@ -3,7 +3,7 @@ import axios from 'axios';
 import Loader from "../Loader/Loader";
 export const server = "https://api.coingecko.com/api/v3";
 
-const HighOrder = (fetchingUrl, Heading, headingText) => 
+const HighOrder = (fetchingUrl, Heading, headingText, errorMessage = "Sorry for the inconvenience") => 
   function Func() {
 
     const [arr, setArr] = useState([]);
@@ -32,7 +32,7 @@ const HighOrder = (fetchingUrl, Heading, headingText) =>
 
 
       if(error){
-        return <div className='errorMessage'>{"Error while fetching coins"}</div>;
+        return <div className='errorMessage'>{errorMessage}</div>;
       }
 
     return (
