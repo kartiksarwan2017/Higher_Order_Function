@@ -3,7 +3,7 @@ import axios from 'axios';
 import Loader from "../Loader/Loader";
 export const server = "https://api.coingecko.com/api/v3";
 
-const HighOrder = (fetchingUrl, MyComponent) => 
+const HighOrder = (fetchingUrl, Heading, headingText) => 
   function Func() {
 
     const [arr, setArr] = useState([]);
@@ -43,7 +43,9 @@ const HighOrder = (fetchingUrl, MyComponent) =>
           ) : (
             <>
              <main>
-              <MyComponent data={"Nice"} />
+              {
+                Heading && <Heading text={headingText} />
+              }
               {
                 arr.map((i) => (
                   <article key={i.name}>

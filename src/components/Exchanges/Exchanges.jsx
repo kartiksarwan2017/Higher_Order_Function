@@ -1,15 +1,7 @@
 import HighOrder from '../HighOrder/HighOrder';
 
-const Custom = ({data}) => {
-  return(
-    <>
-     <div>
-      <h1>{data}</h1>
-     </div>
-    </>
-  )
-}
+const Heading = ({text}) => <h1>{text}</h1>;
 
-const ExchangesNewComponent = HighOrder("/exchanges", Custom);
+const ExchangesNewComponent = HighOrder("/exchanges", Heading, "Exchanges");
 
 export default ExchangesNewComponent;
