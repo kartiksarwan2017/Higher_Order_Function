@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import Loader from "./Loader";
+import React, {useState, useEffect} from 'react';
+import HighOrder from '../HighOrder/HighOrder';
+import Loader from "../Loader/Loader";
 export const server = "https://api.coingecko.com/api/v3";
+
 
 
 const Coins = () => {
@@ -28,7 +30,7 @@ const Coins = () => {
     }
 
     fetchCoins();
-  });
+  }, []);
 
   if(error){
     return <div className='errorMessage'>{"Error while fetching coins"}</div>;
@@ -60,4 +62,6 @@ const Coins = () => {
   )
 }
 
-export default Coins;
+const CoinsNewComponent = HighOrder("/coins/markets?vs_currency=usd");
+
+export default CoinsNewComponent;
